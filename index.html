@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibelquiz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Bibelquiz</h1>
+    <p class="subtitle">Erkennst du die Bibelstelle?</p>
+
+    <!-- Start -->
+    <div id="screen-start" class="screen">
+      <button id="btn-random" class="btn btn-primary">Zufälliger Vers</button>
+      <button id="btn-daily" class="btn btn-secondary">Tagesliste</button>
+    </div>
+
+    <!-- Vers-Anzeige -->
+    <div id="screen-verse" class="screen">
+      <div id="daily-progress" style="display:none"></div>
+      <div class="verse-display">
+        <p id="verse-text"></p>
+      </div>
+      <button id="btn-guess" class="btn btn-primary">Ich weiß es!</button>
+      <button id="btn-back" class="btn btn-back">Zurück</button>
+    </div>
+
+    <!-- Tipp-Eingabe -->
+    <div id="screen-guess" class="screen">
+      <div class="dropdown-group">
+        <label for="sel-testament">Testament</label>
+        <select id="sel-testament"></select>
+      </div>
+      <div class="dropdown-group">
+        <label for="sel-book">Buch</label>
+        <select id="sel-book" disabled></select>
+      </div>
+      <div class="dropdown-group">
+        <label for="sel-chapter">Kapitel</label>
+        <select id="sel-chapter" disabled></select>
+      </div>
+      <div class="dropdown-group">
+        <label for="sel-verse">Vers</label>
+        <select id="sel-verse" disabled></select>
+      </div>
+      <button id="btn-submit" class="btn btn-primary" disabled>Tipp abgeben</button>
+    </div>
+
+    <!-- Ergebnis -->
+    <div id="screen-result" class="screen">
+      <div class="result-card">
+        <div class="result-reference" id="result-reference"></div>
+        <div class="result-verse-text" id="result-verse-text"></div>
+        <div id="result-details"></div>
+      </div>
+      <div class="summary" id="result-summary"></div>
+      <button id="btn-next" class="btn btn-primary">Nächster Vers</button>
+      <button id="btn-back-result" class="btn btn-back">Zurück zum Start</button>
+    </div>
+
+    <!-- Laden -->
+    <div id="screen-loading" class="screen active">
+      <div class="loading">Bibeldaten werden geladen...</div>
+    </div>
+  </div>
+
+  <script src="js/random.js"></script>
+  <script src="js/bible.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
